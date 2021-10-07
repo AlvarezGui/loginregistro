@@ -21,6 +21,10 @@
         <!-- botão -->
         <input type="submit" value="enviar"> <br><br>
     </form>
+    
+    <% if(typeof(mensagem) != 'undefined'){ %>
+        <h4 style="color: red; text-decoration: underline red;"><%=mensagem%></h4>
+    <% } %>
     <a href="/login">Já possui registro?</a>
 </body>
 </html>
