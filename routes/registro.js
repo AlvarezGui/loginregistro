@@ -3,13 +3,21 @@ module.exports = function(app){
         res.render('registro.ejs');
     });
 
-    app.post('/registro', (req, res)=>{
+    app.post('/registro', async(req, res)=>{
+        console.log(req.body);
         var conexao = require('../config/bancodedados')();
         var usuarios = require('../models/usuarios');
 
-        usuarios.findOne({email:req.body.email});
-        if(!usuarios){
-            res.send("esse email não está cadastrado");
+        var userexiste = await usuarios.findOne({email:req.body.email});
+        if(userexiste){
+            return res.send("Email Já cadastrado");
+        } else{
+            var documento = new usuarios({
+                nome:req.body.nome,
+                email:req.body.email,
+                senha:req.body.senha
+            }).save();
+            res.render('login.ejs');
         }
     });
 }
