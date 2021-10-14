@@ -22,7 +22,7 @@ module.exports = function(app){
                 email:req.body.email,
                 senha: senhasegura
             }).save();
-            res.render('index.ejs');
+            res.redirect('/login');
         }
     });
 }
