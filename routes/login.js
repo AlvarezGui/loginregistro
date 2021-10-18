@@ -1,5 +1,5 @@
 module.exports = function(app){
-    var bcrypt = require('bcrypt');
+    var bcrypt = require('bcryptjsww');
     
     app.get('/login', (req, res)=>{
         res.render('login.ejs');
