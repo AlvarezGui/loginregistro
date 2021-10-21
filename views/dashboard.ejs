@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard - Atividades</h1>
+    <h2><%=login.nome%></h2>
+    
+    <h3>Cadastrar Atividades</h3>
+    <fieldset>
+        <legend>Cadastrar Nova Atividade</legend>
+        <form action="" method="post">
+            <!-- id -->
+            <input type="hidden" name="id" value="<%=login._id%>">
+            <!-- data -->
+            <label for="data">Data:</label> <br>
+            <input type="date" name="data" id="data"> <br> <br>
+            <!-- opção -->
+            <label for="tipo">Tipo:</label> <br>
+            <select name="tipo" id="tipo">
+                <option value="AC">AC</option>
+                <option value="AT">AT</option>
+            </select> <br> <br>
+            <!-- entrega -->
+            <label for="entrega">Entrega:</label> <br>
+            <input type="text" name="entrega" id="entrega" placeholder="Onde entregar a tarefa"> <br> <br>
+            <!-- diciplina -->
+            <label for="diciplina">Diciplina:</label> <br>
+            <input type="text" name="diciplina" id="diciplina" placeholder="Diciplina"> <br> <br>
+            <!-- descrição -->
+            <label for="instrucoes">Descrição:</label> <br>
+            <textarea name="instrucoes" id="instrucoes" cols="30" rows="10" placeholder="Instruções"></textarea> <br> <br>
+            <!-- botão -->
+            <input type="submit" value="Salvar">
+        </form>
+    </fieldset>
+</body>
+</html>
