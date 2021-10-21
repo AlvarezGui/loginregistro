@@ -12,7 +12,7 @@ module.exports = function(app){
         var userexiste = await usuarios.findOne({email:req.body.email});
         if(userexiste){
             var verificarSenhas = await bcrypt.compare(req.body.senha, userexiste.senha);
-            if(verificarSenhas) res.send('usuario e senha corretos');
+            if(verificarSenhas) res.redirect('/dashboard?id=' + userexiste._id);
             else res.render('login.ejs', {mensagem:'Senha incorreta'});
         }
         else res.render('login.ejs', {mensagem:'Usuario não cadastrado'});
