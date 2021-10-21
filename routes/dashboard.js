@@ -1,4 +1,6 @@
 module.exports = function(app){
+    var conexao = require('../config/bancodedados.js');
+    
     app.get('/dashboard', (req, res)=>{
         var id = req.query.id;
         console.log(id);
