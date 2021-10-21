@@ -1,12 +1,16 @@
 module.exports = function(app){
-    var conexao = require('../config/bancodedados.js');
+    var conexao = require('../config/bancodedados.js')();
+    var usuarios = require('../models/usuarios');
     
-    app.get('/dashboard', (req, res)=>{
+    app.get('/dashboard', async(req, res)=>{
         var id = req.query.id;
         console.log(id);
         if(!id){
             res.redirect('/login');
+        } else{
+            var userexiste =  await usuarios.findOne({_id:id});
+            if(userexiste)  res.render('dashboard.ejs', {login:userexiste});
+            else res.redirect('/login');
         }
-        res.render('dashboard.ejs', {login:{nome:'Roberto', _id:'teste'}});
     });
 }
