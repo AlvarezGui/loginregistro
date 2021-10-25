@@ -25,6 +25,9 @@ module.exports = function(app){
              diciplina: dados.diciplina,
              instrucoes: dados.instrucoes,
              user: daados.id
-         });
+         }).save()
+         .then((result)=>{
+            res.redirect('/dashboard?id=' + dados.id);
+          });
     });
 }
