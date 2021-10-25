@@ -24,7 +24,7 @@ module.exports = function(app){
              entrega: dados.entrega,
              diciplina: dados.diciplina,
              instrucoes: dados.instrucoes,
-             user: daados.id
+             user: dados.id
          }).save()
          .then((result)=>{
             res.redirect('/dashboard?id=' + dados.id);
