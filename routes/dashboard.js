@@ -15,7 +15,7 @@ module.exports = function(app){
         }
     });
     
-    app.post('/dashboard', async(req, res)=>){
+    app.post('/dashboard', async(req, res)=>{
          var dados = req.body;
           
          var novo = await new atividades({
