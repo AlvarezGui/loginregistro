@@ -28,6 +28,9 @@ module.exports = function(app){
          }).save()
          .then((result)=>{
             res.redirect('/dashboard?id=' + dados.id);
+          })
+          .catch((err)=>{
+              console.log(err);
           });
     });
 }
