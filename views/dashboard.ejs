@@ -38,5 +38,29 @@
             <input type="submit" value="Salvar">
         </form>
     </fieldset>
+
+    <fieldset>
+        <legend>Atividades Cadastradas</legend>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Entrega</th>
+                <th>Disciplina</th>
+                <th>Instruções</th>
+            </tr>
+
+            <% for(var n = 0; n < lista.length; n++){ %>
+                <tr>
+                    <td><%=lista.data%></td>
+                    <td><%=lista.tipo%></td>
+                    <td><%=lista.entrega%></td>
+                    <td><%=lista.disiplina%></td>
+                    <td><%=lista.instrucoes%></td>
+                </tr>
+            <% } %>
+        </table>
+    </fieldset>
 </body>
 </html>
+
