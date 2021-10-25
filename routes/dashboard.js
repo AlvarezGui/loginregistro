@@ -10,7 +10,11 @@ module.exports = function(app){
             res.redirect('/login');
         } else{
             var userexiste =  await usuarios.findOne({_id:id});
-            if(userexiste)  res.render('dashboard.ejs', {login:userexiste});
+            if(userexiste){
+                var lista = await atividades.find({_id:id});
+                if(lista) res.render('dashboard.ejs', {login:userexiste});
+                else res.redirect("/login");
+            }
             else res.redirect('/login');
         }
     });
@@ -33,4 +37,5 @@ module.exports = function(app){
               console.log(err);
           });
     });
+}
 }
