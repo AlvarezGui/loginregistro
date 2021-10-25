@@ -5,7 +5,8 @@ var modelo = new mongoose.Schema({
     tipo:String,
     entrega:String,
     diciplina:String,
-    instrucoes:String
+    instrucoes:String,
+    user:String
 });
 
 module.exports = mongoose.model('atividades', modelo);
