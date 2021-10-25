@@ -14,4 +14,17 @@ module.exports = function(app){
             else res.redirect('/login');
         }
     });
+    
+    app.post('/dashboard', async(req, res)=>){
+         var dados = req.body;
+          
+         var novo = await new atividades({
+             data: dados.data,
+             tipo: dados.tipo,
+             entrega: dados.entrega,
+             diciplina: dados.diciplina,
+             instrucoes: dados.instrucoes,
+             user: daados.id
+         });
+    });
 }
