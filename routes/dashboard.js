@@ -12,7 +12,7 @@ module.exports = function(app){
             var userexiste =  await usuarios.findOne({_id:id});
             if(userexiste){
                 var lista = await atividades.find({_id:id});
-                if(lista) res.render('dashboard.ejs', {login:userexiste});
+                if(lista) res.render('dashboard.ejs', {login:userexiste, lista});
                 else res.redirect("/login");
             }
             else res.redirect('/login');
