@@ -1,6 +1,7 @@
 module.exports = function(app){
     var conexao = require('../config/bancodedados.js')();
     var usuarios = require('../models/usuarios');
+    var atividades = require('../models/atividades');
     
     app.get('/dashboard', async(req, res)=>{
         var id = req.query.id;
